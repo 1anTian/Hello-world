@@ -23,7 +23,7 @@ set s=%time:~6,2%
 set dt=%Y%%M%%D%_%H%-%mm%-%s%
 mkdir %dt%
 copy test.txt %dt%
-
+exit
 	timeout /T 5 /NOBREAK
 )
 pause
