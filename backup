@@ -1,0 +1,29 @@
+@echo off
+color 0a
+chcp 65001
+title backup
+
+echo %cd%
+echo "input cycle"
+set /p c=
+echo %c%
+for /l %%i in (1 1 %c%) do (
+rem	start cmd /k call date.bat
+
+echo %date%
+set Y=%date:~10,4%
+set M=%date:~4,2%
+set D=%date:~7,2%
+
+echo %time%
+set H=%time:~0,2%
+set mm=%time:~3,2%
+set s=%time:~6,2%
+
+set dt=%Y%%M%%D%_%H%-%mm%-%s%
+mkdir %dt%
+copy test.txt %dt%
+
+	timeout /T 5 /NOBREAK
+)
+pause
